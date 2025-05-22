@@ -1,0 +1,737 @@
+{
+	"info": {
+		"_postman_id": "7cfc72f3-1926-4106-bfc2-602ddbf03dbf",
+		"name": "Team_Tasks_Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33035382"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Admin\",\r\n    \"password\":\"Admin@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Got JWT",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Admin\",\r\n    \"password\":\"Admin@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "226"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e2-l1P3ZnTGuIciv4dibO7NXYWzzyQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 May 2025 17:55:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpblVzZXJEVE8iOnsidXNlcm5hbWUiOiJBZG1pbiIsInBhc3N3b3JkIjoiQWRtaW5AMTIzIn0sImlhdCI6MTc0NzkzNjUzOCwiZXhwIjoxNzQ4NTQxMzM4fQ.-9pzptlhJATRTyVTCiZg2QqujBtrVvC83W2QTFO-z0A\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpblVzZXJEVE8iOnsidXNlcm5hbWUiOiJBZG1pbiIsInBhc3N3b3JkIjoiQWRtaW5AMTIzIn0sImlhdCI6MTc0NzkxOTQ5NywiZXhwIjoxNzQ4NTI0Mjk3fQ.dlaHQGvctVb9Hn0dFmwch76cKQLi6jVx9TxdZYFz9Ng",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Vignesh\",\r\n    \"email\":\"Vignesh@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Vignesh\",\r\n    \"email\":\"Vignesh@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"49-zotlOFJzwh200OfBBK5rPln2kI4\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 May 2025 17:56:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Email id already exists\",\n    \"error\": \"Conflict\",\n    \"statusCode\": 409\n}"
+				},
+				{
+					"name": "User Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Vignesh1\",\r\n    \"email\":\"Vignesh1@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "56"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"38-y+XfkautqhvVDBCYLa6TINUUEZ4\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 May 2025 17:56:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 11,\n    \"name\": \"Vignesh1\",\n    \"email\": \"Vignesh1@gmail.com\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Team",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpblVzZXJEVE8iOnsidXNlcm5hbWUiOiJBZG1pbiIsInBhc3N3b3JkIjoiQWRtaW5AMTIzIn0sImlhdCI6MTc0NzkxOTQ5NywiZXhwIjoxNzQ4NTI0Mjk3fQ.dlaHQGvctVb9Hn0dFmwch76cKQLi6jVx9TxdZYFz9Ng",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Sparks\",\r\n    \"members\":[9,10]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/team",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"team"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Team Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Wolf\",\r\n    \"members\":[10]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/team",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"team"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "143"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8f-gEO443V8nLOwkK4Y5GONr4Dwjj8\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 May 2025 17:46:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 7,\n    \"name\": \"Sparks\",\n    \"members\": [\n        {\n            \"id\": 9,\n            \"name\": \"Harish\",\n            \"email\": \"Harish@gmail.com\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Vignesh\",\n            \"email\": \"Vignesh@gmail.com\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpblVzZXJEVE8iOnsidXNlcm5hbWUiOiJBZG1pbiIsInBhc3N3b3JkIjoiQWRtaW5AMTIzIn0sImlhdCI6MTc0NzkxOTQ5NywiZXhwIjoxNzQ4NTI0Mjk3fQ.dlaHQGvctVb9Hn0dFmwch76cKQLi6jVx9TxdZYFz9Ng",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Users - 200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "108"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6c-C+UN6Gg4QoBSnQc+p21/HwaTvIo\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 May 2025 17:53:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 9,\n        \"name\": \"Harish\",\n        \"email\": \"Harish@gmail.com\"\n    },\n    {\n        \"id\": 10,\n        \"name\": \"Vignesh\",\n        \"email\": \"Vignesh@gmail.com\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Assign Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpblVzZXJEVE8iOnsidXNlcm5hbWUiOiJBZG1pbiIsInBhc3N3b3JkIjoiQWRtaW5AMTIzIn0sImlhdCI6MTc0NzkxOTQ5NywiZXhwIjoxNzQ4NTI0Mjk3fQ.dlaHQGvctVb9Hn0dFmwch76cKQLi6jVx9TxdZYFz9Ng",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\":\"Do the DB Design\",\r\n    \"due_date\":\"2025-05-25\",\r\n    \"assignee\":10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"task"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Task Assigned",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\":\"Do the DB Design\",\r\n    \"due_date\":\"2025-05-25\",\r\n    \"assignee\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/task",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"task"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "228"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e4-BvHZvVAl+5Rn1tIstm5i4RnDIps\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 May 2025 17:48:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"description\": \"Do the DB Design\",\n    \"due_date\": \"2025-05-25\",\n    \"assignee\": {\n        \"id\": 10,\n        \"name\": \"Vignesh\",\n        \"email\": \"Vignesh@gmail.com\"\n    },\n    \"status\": \"pending\",\n    \"createdAt\": \"2025-05-22T17:48:00.675Z\",\n    \"updatedAt\": \"2025-05-22T17:48:00.675Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "load all tasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpblVzZXJEVE8iOnsidXNlcm5hbWUiOiJBZG1pbiIsInBhc3N3b3JkIjoiQWRtaW5AMTIzIn0sImlhdCI6MTc0NzkxOTQ5NywiZXhwIjoxNzQ4NTI0Mjk3fQ.dlaHQGvctVb9Hn0dFmwch76cKQLi6jVx9TxdZYFz9Ng",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"task"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Tasks",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/task",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"task"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "459"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1cb-OVTlpeDBD4NzO6CX+vY3KLDVpMU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 May 2025 17:48:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"description\": \"Complted the task\",\n        \"due_date\": \"2025-05-23\",\n        \"assignee\": {\n            \"id\": 9,\n            \"name\": \"Harish\",\n            \"email\": \"Harish@gmail.com\"\n        },\n        \"status\": \"completed\",\n        \"createdAt\": \"2025-05-22T17:08:12.563Z\",\n        \"updatedAt\": \"2025-05-22T17:40:34.000Z\"\n    },\n    {\n        \"id\": 2,\n        \"description\": \"Do the DB Design\",\n        \"due_date\": \"2025-05-25\",\n        \"assignee\": {\n            \"id\": 10,\n            \"name\": \"Vignesh\",\n            \"email\": \"Vignesh@gmail.com\"\n        },\n        \"status\": \"pending\",\n        \"createdAt\": \"2025-05-22T17:48:00.675Z\",\n        \"updatedAt\": \"2025-05-22T17:48:00.675Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "change the status/properties of a task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpblVzZXJEVE8iOnsidXNlcm5hbWUiOiJBZG1pbiIsInBhc3N3b3JkIjoiQWRtaW5AMTIzIn0sImlhdCI6MTc0NzkxOTQ5NywiZXhwIjoxNzQ4NTI0Mjk3fQ.dlaHQGvctVb9Hn0dFmwch76cKQLi6jVx9TxdZYFz9Ng",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"description\": \"Complted the task\",\r\n        \"due_date\": \"2025-05-23\",\r\n        \"status\": \"in-progress\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/task/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"task",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Task Status Update",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"description\": \"Complted the task\",\r\n        \"due_date\": \"2025-05-23\",\r\n        \"status\": \"in-progress\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/task/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"task",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "230"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e6-dSWYyN4WY5HKHefAxG0IRE2NxV4\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 22 May 2025 17:48:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"description\": \"Complted the task\",\n    \"due_date\": \"2025-05-23\",\n    \"assignee\": {\n        \"id\": 9,\n        \"name\": \"Harish\",\n        \"email\": \"Harish@gmail.com\"\n    },\n    \"status\": \"in-progress\",\n    \"createdAt\": \"2025-05-22T17:08:12.563Z\",\n    \"updatedAt\": \"2025-05-22T17:48:42.000Z\"\n}"
+				}
+			]
+		}
+	]
+}
